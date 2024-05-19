@@ -383,7 +383,7 @@ class AIOKafkaConsumerThread(ConsumerThread):
             bootstrap_servers=server_list(
                 transport.url, transport.default_port),
             request_timeout_ms=int(conf.broker_request_timeout * 1000.0),
-            enable_auto_commit=True,
+            enable_auto_commit=False,
             max_poll_records=conf.broker_max_poll_records,
             max_poll_interval_ms=int(max_poll_interval * 1000.0),
             auto_offset_reset=conf.consumer_auto_offset_reset,

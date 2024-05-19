@@ -914,7 +914,8 @@ class Stream(StreamT[T_co], Service):
                     self.current_event = None
                     if do_ack and event is not None:
                         # This inlines self.ack
-                        last_stream_to_ack = event.ack()
+                        # last_stream_to_ack = event.ack() # 关闭自动提交offset
+                        last_stream_to_ack = event
                         message = event.message
                         tp = event.message.tp
                         offset = event.message.offset
